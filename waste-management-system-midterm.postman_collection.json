@@ -1,0 +1,721 @@
+{
+  "info": {
+    "name": "Waste Management System Midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "A2 - Save waste type",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/waste-types/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "waste-types",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Organic\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - Save truck",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/trucks/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "trucks",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"truckNumber\": 1,\n  \"plateNumber\": \"RAC 001 A\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - Save collector",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/collectors/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "collectors",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Jean\",\n  \"lastName\": \"Mugisha\",\n  \"phone\": \"0780000000\",\n  \"truck\": {\n    \"id\": \"{{truckId}}\"\n  },\n  \"wasteTypes\": []\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - Save resident",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/residents/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "residents",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Alice\",\n  \"lastName\": \"Uwase\",\n  \"householdCode\": \"HH-0231\",\n  \"phone\": \"0780000001\",\n  \"village\": \"Kibagabaga\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - Save pickup",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/save",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "save"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"pickupDate\": \"2026-11-15\",\n  \"address\": \"Kibagabaga\",\n  \"resident\": {\n    \"id\": \"{{residentId}}\"\n  },\n  \"collector\": {\n    \"id\": \"{{collectorId}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "A2 - List waste-types",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/waste-types/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "waste-types",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List trucks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/trucks/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "trucks",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List collectors",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/collectors/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "collectors",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List residents",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/residents/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "residents",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "A2 - List pickups",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "B1 - Residents by village",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/residents/by-village?village=kibagabaga",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "residents",
+            "by-village?village=kibagabaga"
+          ]
+        }
+      }
+    },
+    {
+      "name": "B2 - Pickups by status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/by-status?status=REQUESTED",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "by-status?status=REQUESTED"
+          ]
+        }
+      }
+    },
+    {
+      "name": "B3 - Pickups between dates",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/between?start=2026-10-01&end=2026-10-31",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "between?start=2026-10-01&end=2026-10-31"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C1 - Collectors by waste type",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/collectors/by-waste-type?name=plastic",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "collectors",
+            "by-waste-type?name=plastic"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C2 - Free trucks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/trucks/free",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "trucks",
+            "free"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C3 - Unused waste types",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/waste-types/unused",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "waste-types",
+            "unused"
+          ]
+        }
+      }
+    },
+    {
+      "name": "C4 - Residents of collector",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/residents/of-collector/{{collectorId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "residents",
+            "of-collector",
+            "{{collectorId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "D2 - Assign pickup",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/{{pickupId}}/status?status=ASSIGNED",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "{{pickupId}}",
+            "status?status=ASSIGNED"
+          ]
+        }
+      }
+    },
+    {
+      "name": "D3 - Add waste type to collector",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/collectors/{{collectorId}}/waste-types/{{wasteTypeId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "collectors",
+            "{{collectorId}}",
+            "waste-types",
+            "{{wasteTypeId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "D4 - Move collector truck",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/collectors/{{collectorId}}/truck?truckNumber=4",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "collectors",
+            "{{collectorId}}",
+            "truck?truckNumber=4"
+          ]
+        }
+      }
+    },
+    {
+      "name": "E1 - Save waste load",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/waste-loads/save?pickupId={{pickupId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "waste-loads",
+            "save?pickupId={{pickupId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"material\": \"Plastic\",\n  \"note\": \"Sorted bottles and bags\",\n  \"weightKg\": 12\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "E2 - Resident waste load history",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/waste-loads/resident/HH-0231",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "waste-loads",
+            "resident",
+            "HH-0231"
+          ]
+        }
+      }
+    },
+    {
+      "name": "E3 - Delete waste load",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/waste-loads/delete/{{wasteLoadId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "waste-loads",
+            "delete",
+            "{{wasteLoadId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "F1 - Pickup statistics",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/stats/by-status",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "stats",
+            "by-status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "F2 - Cancel collector day",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/cancel-day?collectorId={{collectorId}}&date=2026-10-20",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "cancel-day?collectorId={{collectorId}}&date=2026-10-20"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Bonus - Dashboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/dashboard/summary",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "dashboard",
+            "summary"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Bonus - Pickup pagination",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/pickups/page?page=0&size=5&sort=pickupDate,desc",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "pickups",
+            "page?page=0&size=5&sort=pickupDate,desc"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "truckId",
+      "value": ""
+    },
+    {
+      "key": "collectorId",
+      "value": ""
+    },
+    {
+      "key": "residentId",
+      "value": ""
+    },
+    {
+      "key": "pickupId",
+      "value": ""
+    },
+    {
+      "key": "wasteTypeId",
+      "value": ""
+    },
+    {
+      "key": "wasteLoadId",
+      "value": ""
+    }
+  ]
+}
