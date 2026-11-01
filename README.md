@@ -19,6 +19,6 @@ Backend REST API for the Waste Management System, built with Spring Boot, Spring
 
 1. Clone the repository: `git clone https://github.com/oger1999/waste-management-system-backend.git`
 2. Go into the project folder: `cd waste-management-system-backend`
-3. Create the mysql database: `CREATE DATABASE waste_management_system;`
+3. Create the mysql database: `CREATE DATABASE waste_management_db;`
 4. Open `src/main/resources/application.properties` and set your own database details:
 
