@@ -12,7 +12,7 @@ Backend REST API for the Waste Management System, built with Spring Boot, Spring
 
 - Java 17
 - Maven 3.8
-- postegressql
+- MySQL 8
 - Postman
 
 # Steps to run the API
